@@ -28,9 +28,17 @@ addTwoNumbers(20, 32); // 32
 addTwoNumbers(10, "100"); // Alert Enter Valid Input
 */
   function addTwoNumbers(firstNum, secondNum){
-    return firstNum+secondNum;
+  if (
+    typeof firstNum !== "number" || 
+    typeof secondNum !== "number"
+  
+  ){
+    alert(`Enter valid input`);
+  }else{
+    return firstNum + secondNum;
   }
-  addTwoNumbers(12,32);
+  }
+  
 
 /*
 4. Create a function named `calc` which accepts three parameter `numA`, `numB` and `operation`. Operation
@@ -44,34 +52,32 @@ calc(20, 10, 'sub'); // 10
 calc(20, 10, 'mul'); // 200
 */
 
-function calc (){
-  let numA = +prompt('Enter a firstNumber:');
-  let numB = +prompt('Enter a SecondNumber:');
-  let operation = prompt(`"Enter a Operation(-,+,*,/)`);
-  if(isNaN (numA) === false && isNaN (numB) === false){
-    switch(operation){
-      case "-":
-        return (`${numA - numB}`);
-        break;
-        case "+":
-          return (`${numA + numB}`);
-          break;
-          case "*":
-            return (`${numA * numB}`);
-            break;
-            case "/":
-              return (`${numA / numB}`);
-              break;
-                   
-    }
+function calc(firstNum, secondNum, operation){
+  if (
+    typeof firstNum !== "number"||
+    typeof secondNum !== "number"
+  ){
+    alert(`Enter valid input`);
   }else{
-      return (`enter a valid input`);
-    
+    switch(operation){
+      case "add":
+        return firstNum + secondNum;
+       break;
+       case "sub":
+        return firstNum - secondNum;
+       break;
+       case "mul":
+        return firstNum * secondNum;
+       break;
+       case "div":
+        return firstNum / secondNum;
+       break;
+       default:
+        alert("Enter valid opration");
+
+    }
   }
 }
-console.log(calc());
-
-
 
 
 /*
@@ -81,15 +87,11 @@ on if the year id leap year or not.
 isLeapYear(2000); // true
 isLeapYear(2001); // false
 */
-function isLeapYear(){
-  let year = +prompt('Enter a year');
-  if(year % 4===0){
-    alert(` true`);
-  }else{
-    alert(` false`);
-  }
+function isLeapYear(year){
+  if (year % 400 === 0) return true;
+  if (year % 100 === 0) return false;
+  return year % 4 ===0;
 }
-isLeapYear();
 
 /*
 6. Create a function named `getFactorial` that accepts a number and return the factorial of the number.
