@@ -8,9 +8,15 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge() {
-  // Your code goes here
+function calculateDogAge(puppyAge) {
+  return `Dog Age is ${puppyAge * 7}`;
 }
+calculateDogAge(2);
+// function calculateDogAge(age) {
+//   const puppyAge = 7;
+//   return puppyAge * age;
+// }
+// calculateDogAge();
 
 /*
 2. 🎖Write a function named calculateMoviesToWatch that:
@@ -19,9 +25,23 @@ function calculateDogAge() {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch() {
-  // Your code goes here
+function calculateMoviesToWatch(age, movies) {
+  const MAX_AGE =40;
+  return `total movies are in ${(MAX_AGE - age) * 4 *12 *movies}`;
+  
 }
+calculateMoviesToWatch(12,3)
+/*
+function calculateMoviesToWatch(age, noOfMovie) {
+  const MAX_AGE = 40;
+  let totalNumberOfMovies =
+   (MAX_AGE - age) * 12 * 4 * noOfMovie;
+  return totalNumberOfMovies;
+}
+console.log(calculateMoviesToWatch(70,4));
+VM2908:8 1920
+*/
+
 
 /*
 3. 🎖Create a function called celsiusToFahrenheit:
@@ -29,10 +49,24 @@ function calculateMoviesToWatch() {
   * [ ] Convert it to fahrenheit and return "NN°F is NN°C"
 */
 
-function celsiusToFahrenheit() {
-  // Your code goes here
+function celsiusToFahrenheit(tempcelsius) {
+  return `temperature is fahrenheit is ${(tempcelsius * 9)/5 + 32} degree F`;
+  
 }
-
+celsiusToFahrenheit(37.5);
+// different style
+// function celsiusToFahrenheit(temperatureInCelsius) {
+//   const div1 = 9;
+//   const div2 = 5;
+//   const add = 32;
+//   return (celsiusToFahrenheit * div1) / div2 +add;
+// }
+// celsiusToFahrenheit(37.5);
+// 99.5
+// function celsiusToFahrenheit(temperature) {
+//   return (temperature * 9) / 5 + 32 ;
+// }
+// console.log(celsiusToFahrenheit(37.5));
 /*
 4. 🎖Create a function called fahrenheitToCelsius:
   * [ ] Accepts fahrenheit temperature as argument.
