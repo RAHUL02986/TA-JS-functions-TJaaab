@@ -10,6 +10,8 @@ Do the following for the given problem:
 function convertToString(n) {
   return String(n);
 }
+let string = convertToString;
+
 
 // - Write a Function Expression
 let convertToString = function (n) {
