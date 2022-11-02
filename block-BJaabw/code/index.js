@@ -11,11 +11,17 @@ minToSec(2) ➞ 120
 */
 
 // - Write a Function Decleration for above problem
-function minToSec() {
-  // Your code
+function minToSec(min) {
+  let seconds = (min * 60);
+  return ` ${min} in second ${seconds}`
 }
-// - Execute the function with required parameter
+minToSec();
 
+// - Execute the function with required parameter
+// minToSec(13);
+// ' 13 in second 780'
+// minToSec(2);
+// ' 2 in second 120'
 /* 2. 
 Create a function named isInRange which validates whether a number n is exclusively within the bounds of lower and upper.
 Return true and false based on that.
@@ -49,9 +55,21 @@ Obese: BMI is 30 or more
 
 */
 
-function calculateBMI() {
-  // Your code
+function calculateBMI(heigth , weight) {
+ let BMI = weight / (height * height);
+ if(bmi < 18.5){
+  return `Underweight`
+
+ }else if(BMI >= 18.5 && BMI <= 24.9){
+  return `Normal weight`
+ } else if(BMI >= 25 && BMI <= 29.9){
+  return `Overweight`
+ }else{
+  return `Obese`
+ }
+ 
 }
+calculateBMI();
 
 /* 3. appropiateDrinks
 
@@ -64,9 +82,19 @@ Create a function that take the age are return the appropiate drink based on the
 
 */
 
-function appropiateDrinks() {
-  // Your code
+function appropiateDrinks(age) {
+if(age <= 14){
+  return `drink fruit juice`
+}else if(age < 18 && age > 14){
+  return `drink soda`
+}else if(age < 21 && age >= 18){
+  return `drink fruit - flavored beer`
+}else if(age >= 21) {
+  return ` drink throad-piercing vodka`
 }
+}
+appropiateDrinks();
+
 
 /* 4. Add two numers or string
 
@@ -79,12 +107,21 @@ Twist is when user passes anything other than number, or string value you should
 
 */
 
-function sum() {
-  // Your code
+function sum(a,b) {
+  if(typeof(a)=='number' && typeof(b)=='number'){
+    return a + b;
+  }else if(typeof(a)=="string" && typeof(b)=="string"){
+    return a + b;
+  }else {
+    return `Enter Valid Value`
+  }
+  
+
+
 }
 
 // Function Test
-sum(2, 4); // 4
+sum(2, 4); // 6
 sum('Arya', 'Stark'); // "Arya Stark"
 sum('Arya', 2); // Enter valid Values
 sum(null, 2); // Enter valid Values
